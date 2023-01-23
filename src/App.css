@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.App{
+    display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+:root{
+    --color1: #12c2e9;
+    --color2: #c471ed;
+    --color3: #f64f59;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ---------------------------------------------------------*/
+.box{
+    background-color: #eac58d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ---------------------------------------------------------*/
+
+
+.circle-background{
+    fill: none;
+    stroke:#ddd;
 }
 
-.App-link {
-  color: #61dafb;
+.circle-progress{
+    fill: none;
+    stroke: var(--color1);
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hardware-name{
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+
+.circle-text{  /*  valor variavel  */
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.symbol{  /*  acompanhado ao valor variavel   */
+    font-size: 1.8rem;
+    font-weight: bold;
 }

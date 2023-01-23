@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+
+// import axios from 'axios';
+
+import {  useState } from 'react';
 import './App.css';
+import CircleMeditor from './components/CircleMeditor';
+import ApiComponent from './components/MainComponent/ApiComponent';
+
+
+
+
+
+
 
 function App() {
+
+
+  const [percentage, setPercentage] = useState(20)
+
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {/* <PersonList/> */}
+
+      <ApiComponent/>
+      
+
+      
+
+
+
+      {/* valor - escala  - nome */}
+      {/* <CircleMeditor
+        percentage={percentage}
+        circleWidth="200"
+      />
+       */}
+
+      {/* <CircleMeditor
+        percentage={percentage}
+        circleWidth="200"
+      />  */}
+
     </div>
   );
 }

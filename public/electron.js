@@ -5,32 +5,59 @@ const si = require('systeminformation');
 
 
 const express = require('express');
+
 const appExpress = express();
+
+//===================================== estudar depois
+const cors = require('cors');
+
+appExpress.use(cors({
+    origin: '*'
+}));
+
+//=====================================
 
 appExpress.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
 appExpress.get('/gpu', (req, res) => {
-    si.cpu(function (data) {
+    si.graphics(function (data) {
         res.send(data.controllers[0]);
-        console.log(data.controllers);
+        // console.log(data.controllers);
     });
 });
 
+// appExpress.get('/cpu', (req, res) => {  /* -------- */
+//      si.currentLoad(function (data) {
+//         res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/');
+//          res.send(data);
+//          console.log(data);
+         
+//      });
+// });
+
 appExpress.get('/cpu', (req, res) => {
-    si.currentLoad(function (data) {
-        res.send(data);
-        console.log(data);
+    si.cpu(function (data) {
+     res.send(data);    
     });
 });
+
+appExpress.get('/cpuSpeed', (req, res) => {
+    si.cpuCurrentSpeed(function (data) {
+     res.send(data);   
+     console.log(data); 
+    });
+});
+
 
 appExpress.get('/disk', (req, res) => {
     si.diskLayout(function (data) {
         res.send(data);
-        console.log(data);
+        
     });
 });
+
 
 appExpress.listen(3030, () => {
     console.log('Server listening on port 3030');
