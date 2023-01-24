@@ -36,8 +36,8 @@ function App() {
       {/* <CircleMeditor
         percentage={percentage}
         circleWidth="200"
-      />
-       */}
+      /> */}
+      
 
       {/* <CircleMeditor
         percentage={percentage}

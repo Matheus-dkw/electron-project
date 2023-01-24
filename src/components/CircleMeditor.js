@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CircleMeditor = ({ percentage, circleWidth }) => {
+const CircleMeditor = ({ percentage, circleWidth, nome }) => {
   const radius = 85
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100
@@ -42,7 +42,7 @@ const CircleMeditor = ({ percentage, circleWidth }) => {
           textAnchor='middle'
           className='hardware-name'
         >
-          temp    
+          {nome}   
         </text>
 
 

@@ -28,15 +28,6 @@ appExpress.get('/gpu', (req, res) => {
     });
 });
 
-// appExpress.get('/cpu', (req, res) => {  /* -------- */
-//      si.currentLoad(function (data) {
-//         res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000/');
-//          res.send(data);
-//          console.log(data);
-         
-//      });
-// });
-
 appExpress.get('/cpu', (req, res) => {
     si.cpu(function (data) {
      res.send(data);    
@@ -46,9 +37,25 @@ appExpress.get('/cpu', (req, res) => {
 appExpress.get('/cpuSpeed', (req, res) => {
     si.cpuCurrentSpeed(function (data) {
      res.send(data);   
+    //  console.log(data); 
+    });
+});
+
+appExpress.get('/cpuAvgLoad', (req, res) => {
+    si.currentLoad(function (data) {
+     res.send(data);   
+    //  console.log(data); 
+    });
+});
+
+appExpress.get('/cpuTemp', (req, res) => {
+    si.cpuTemperature(function (data) {
+     res.send(data);   
      console.log(data); 
     });
 });
+
+
 
 
 appExpress.get('/disk', (req, res) => {
