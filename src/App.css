@@ -8,16 +8,19 @@
 
 
 :root{
-    --color1: #12c2e9;
+    --color1: #1a90ff;
     --color2: #c471ed;
     --color3: #f64f59;
 }
 
 /* ---------------------------------------------------------*/
 .box{
-    /* background-color: #eac58d; */
+    
 }
 
+text{
+    color: white;
+}
 /* ---------------------------------------------------------*/
 
 
@@ -31,21 +34,28 @@
     stroke: var(--color1);
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: 0.5;
 }
 
 .hardware-name{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: normal;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    color: #ddd;
+    
 }
 
 
 .circle-text{  /*  valor variavel  */
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
+    stroke: #ddd;
+    fill: #ddd;
 }
 
 .symbol{  /*  acompanhado ao valor variavel   */
     font-size: 1.8rem;
     font-weight: bold;
+    stroke: #ddd;
+    fill: #ddd;
 }

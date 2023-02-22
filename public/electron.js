@@ -8,6 +8,10 @@ const express = require('express');
 
 const appExpress = express();
 
+
+// ====== ============ ========== ==============
+
+
 //===================================== estudar depois
 const cors = require('cors');
 
@@ -21,49 +25,94 @@ appExpress.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+// ======================SISTEMA========================
+
+appExpress.get('/system', (req, res) => {
+    si.system(function (data) {
+        res.send(data);
+    });
+});
+
+appExpress.get('/baseboard', (req, res) => {
+    si.baseboard(function (data) {
+        res.send(data);
+    });
+});
+
+
+
+// ==============================================
+
+// ==================== CPU ==========================
+
+appExpress.get('/cpu', (req, res) => {
+    si.cpu(function (data) {
+        res.send(data);
+    });
+});
+
+appExpress.get('/cpuSpeed', (req, res) => {
+    si.cpuCurrentSpeed(function (data) {
+        res.send(data);
+        console.log(data);
+    });
+});
+
+
+appExpress.get('/cpuAvgLoad', (req, res) => {
+    si.currentLoad(function (data) {
+        res.send(data);
+        //  console.log(data); 
+    });
+});
+
+appExpress.get('/cpuTemp', (req, res) => {
+    si.cpuTemperature(function (data) {
+        res.send(data);
+        console.log(data);
+    });
+});
+// ================================================================
+
+
+// ==================== GPU ==========================
 appExpress.get('/gpu', (req, res) => {
     si.graphics(function (data) {
         res.send(data.controllers[0]);
         // console.log(data.controllers);
     });
 });
-
-appExpress.get('/cpu', (req, res) => {
-    si.cpu(function (data) {
-     res.send(data);    
-    });
-});
-
-appExpress.get('/cpuSpeed', (req, res) => {
-    si.cpuCurrentSpeed(function (data) {
-     res.send(data);   
-    //  console.log(data); 
-    });
-});
-
-appExpress.get('/cpuAvgLoad', (req, res) => {
-    si.currentLoad(function (data) {
-     res.send(data);   
-    //  console.log(data); 
-    });
-});
-
-appExpress.get('/cpuTemp', (req, res) => {
-    si.cpuTemperature(function (data) {
-     res.send(data);   
-     console.log(data); 
-    });
-});
+// ==============================================
 
 
+// ======================DISCO======================
 
 
 appExpress.get('/disk', (req, res) => {
     si.diskLayout(function (data) {
         res.send(data);
-        
+
     });
 });
+// ============================================
+
+// ======================Memory======================memLayout
+
+appExpress.get('/memory', (req, res) => {
+    si.mem(function (data) {
+        res.send(data);
+
+    });
+});
+
+appExpress.get('/memLayout', (req, res) => {
+    si.memLayout(function (data) {
+        res.send(data);
+
+    });
+});
+
+// ============================================
 
 
 appExpress.listen(3030, () => {
@@ -74,8 +123,8 @@ appExpress.listen(3030, () => {
 function createWindow() {
     // Create the browser window.
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1060,
+        height: 700,
         webPreferences: {
             nodeIntegration: true,
         },

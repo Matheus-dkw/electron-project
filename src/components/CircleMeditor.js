@@ -1,4 +1,5 @@
 import React from 'react'
+import '../components/MainComponent/CircleStyle.css'
 
 const CircleMeditor = ({ percentage, circleWidth, nome }) => {
   const radius = 85
@@ -6,8 +7,7 @@ const CircleMeditor = ({ percentage, circleWidth, nome }) => {
   const dashOffset = dashArray - (dashArray * percentage) / 100
 
   return (
-    <div className='box'>
-
+    <div className='box' >
       <svg
         width={circleWidth}
         height={circleWidth}
@@ -30,6 +30,7 @@ const CircleMeditor = ({ percentage, circleWidth, nome }) => {
           style={{
             strokeDasharray: dashArray,
             strokeDashoffset: dashOffset,
+            
           }}
           transform={`rotate(-90 ${circleWidth / 2} ${circleWidth / 2} )`}
         />
@@ -53,18 +54,19 @@ const CircleMeditor = ({ percentage, circleWidth, nome }) => {
           dy="0.3em"
           textAnchor='middle'
           className='circle-text'
+         
         >
           {percentage}
         </text>
 
         {/* Escala de variação  {escala} */}
         <text
-          x="75%"
-          y="54%"
+          x="73%"
+          y="52%"
           dy="0.3em"
           textAnchor='middle'
           className='symbol'
-
+          
         >%</text>
 
 
